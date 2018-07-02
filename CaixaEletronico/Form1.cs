@@ -22,6 +22,23 @@ namespace CaixaEletronico
             this.textoTitular.Text = conta.Titular.Nome;
             this.textoNumero.Text = conta.Numero.ToString();
             this.textoSaldo.Text = conta.Saldo.ToString();
+
+            //Conta[] contas = new Conta[5];
+            //contas[0] = new Conta();
+            //contas[0].Deposita(1);
+            //contas[1] = new Conta();
+            //contas[1].Deposita(30);
+            //contas[2] = new Conta();
+            //contas[2].Deposita(500);
+            //contas[3] = new ContaPoupanca();
+            //contas[3].Deposita(950);
+            //contas[4] = new ContaPoupanca();
+            //contas[4].Deposita(1);
+
+            //foreach (Conta c in contas)
+            //{
+            //    MessageBox.Show(String.Format("O saldo da conta é: {0}", c.Saldo));            
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,6 +58,12 @@ namespace CaixaEletronico
         private void AtualizaSaldo()
         {
             this.textoSaldo.Text = this.conta.Saldo.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();            
         }
     }
 }

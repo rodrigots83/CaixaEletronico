@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace CaixaEletronico
 {
-    class ContaPoupanca : Conta
+    class TotalizadorDeContas
     {
-        public override void Saca(double valor)
-        {
-            this.Saldo -= valor + 0.1;
-        }
+        public double Total { get; private set; }
 
-        public void CalculaInvestimento()
+        public void Adiciona(Conta conta)
         {
-
+            this.Total += conta.Saldo;            
         }
     }
 }
- 
