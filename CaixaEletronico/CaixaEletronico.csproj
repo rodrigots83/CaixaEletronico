@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Conta.cs" />
     <Compile Include="ContaPoupanca.cs" />
+    <Compile Include="CrieiNaTerracap_Teste.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
