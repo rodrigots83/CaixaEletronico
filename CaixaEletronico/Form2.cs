@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Caelum.CaixaEletronico.Contas;
 
-namespace CaixaEletronico
+namespace Caelum.CaixaEletronico
 {
     public partial class Form2 : Form
     {
@@ -71,7 +72,14 @@ namespace CaixaEletronico
 
             if (this.contaSelecionada != null)
             {
-                this.contaSelecionada.Saca(valorSacar);
+                try
+                {
+                    this.contaSelecionada.Saca(valorSacar);
+                }
+                catch (SaldoInsuficienteException exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
             }
 
             MostraSaldo();

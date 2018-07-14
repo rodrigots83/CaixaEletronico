@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Caelum.CaixaEletronico.Cliente;
 
-namespace CaixaEletronico
+namespace Caelum.CaixaEletronico.Contas
 {
     class Conta
-    {
+    {      
         public Titular Titular { get; set; }
         public double Saldo { get; protected set; }
         public int Numero { get; set; }
@@ -48,6 +49,8 @@ namespace CaixaEletronico
         {
             if (this.saldoPositivo(valor))
                 this.Saldo -= valor;
+            else
+                throw new SaldoInsuficienteException();
         }
 
         public void Transfere(double valor, Conta destino)
